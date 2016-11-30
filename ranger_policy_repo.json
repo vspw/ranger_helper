@@ -1,0 +1,86 @@
+{
+  "Env_Details": {
+    "Env_Name": "Prod",
+    "Ranger_URI": "zulu.hdp.com:6080"
+  },
+  "HDFS_Policies": [
+    {
+      "policyName": "TestingPol4",
+      "resourceName": "/tmp/test1",
+      "description": "tesitn this",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "true",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "hadoop"
+          ],
+          "permList": [
+            "Read",
+            "Execute",
+            "Write",
+            "Admin"
+          ]
+        }
+      ]
+    },
+    {
+      "policyName": "TestingPol5",
+      "resourceName": "/tmp/test2,/tmp/test3",
+      "description": "tesitn this",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "true",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "hadoop"
+          ],
+          "permList": [
+            "Read",
+            "Execute",
+            "Write",
+            "Admin"
+          ]
+        }
+      ]
+    },
+    {
+      "policyName": "TestingPol6",
+      "resourceName": "/tmp/test4",
+      "description": "tesitn this",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "false",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "hadoop","public"
+          ],
+          "permList": [
+            "Read",
+            "Execute",
+            "Write",
+            "Admin"
+          ]
+        },
+        {
+          "userList": [
+            "hive"
+          ],
+          "permList": [
+            "Read",
+            "Execute"
+          ]
+        }
+      ]
+    }
+  ]
+}

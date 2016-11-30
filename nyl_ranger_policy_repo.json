@@ -1,0 +1,139 @@
+{
+  "Env_Details": {
+    "Env_Name": "Prod",
+    "Ranger_URI": "zulu.hdp.com:6080"
+  },
+  "HDFS_Policies": [
+    {
+      "policyName": "Users: Writable RWX/R",
+      "resourceName": "/tmp",
+      "description": "tesitn this",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "true",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "users"
+          ],
+          "permList": [
+            "Read",
+            "Execute",
+            "Write"
+          ]
+        }
+      ]
+    },
+    {
+      "policyName": "Users: Readable RE/R",
+      "resourceName": "/user/oozie,/source/public,/processed/public,/protegrity,/apps/sparkdeps",
+      "description": "Public Data that is Readable by Cluster Users",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "true",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "users"
+          ],
+          "permList": [
+            "Read",
+            "Execute"
+          ]
+        }
+      ]
+    },
+    {
+      "policyName": "Users: List_Contents RE/NR",
+      "resourceName": "/apps,/apps/hive,/apps/hive/warehouse,/source,/source/private/*,/source/private/oracle/*,/source/private/oracle/*/*,/tenant,/tenant/*,/tenant/*/*,/processed,/processed/*,/processed/*/*",
+      "description": "Sensitive data which is Listable but not readable",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "false",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "users"
+          ],
+          "permList": [
+            "Read",
+            "Execute"
+          ]
+        }
+      ]
+    },
+    {
+      "policyName": "App: DIF RWX/R",
+      "resourceName": "/landing,/processed",
+      "description": "Application Account Access for DIF operations",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "true",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "hadoop"
+          ],
+          "permList": [
+            "Read",
+            "Execute",
+            "Write"
+          ]
+        }
+      ]
+    },
+    {
+      "policyName": "Administrative RWX/R",
+      "resourceName": "/",
+      "description": "SuperUser privileges for administrators",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "true",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "hdfs"
+          ],
+          "permList": [
+            "Read",
+            "Execute",
+            "Write",
+            "Admin"
+          ]
+        }
+      ]
+    },
+    {
+      "policyName": "App: HBase RWX/R",
+      "resourceName": "/apps/hbase",
+      "description": "Application account access to HBase HDFS directories",
+      "repositoryName": "turing_hadoop",
+      "repositoryType": "hdfs",
+      "isEnabled": "true",
+      "isRecursive": "true",
+      "isAuditEnabled": "true",
+      "permMapList": [
+        {
+          "groupList": [
+            "hdfs"
+          ],
+          "permList": [
+            "Read",
+            "Execute",
+            "Write"
+          ]
+        }
+      ]
+    }
+  ]
+}

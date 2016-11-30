@@ -1,0 +1,22 @@
+{
+  "Env_Details": {
+    "Env_Name": "Prod",
+    "Ranger_URI": "zulu.hdp.com:6080"
+  },
+  "HDFS_Policies": [
+{
+    "policyName": "TestingPol2",
+    "resourceName": "/tmp",
+    "description": "tesitn this",
+    "repositoryName": "turing_hadoop",
+    "repositoryType": "hdfs",
+    "isEnabled": "true",
+    "isRecursive": "true",
+    "isAuditEnabled": "true",
+    "permMapList": [{
+        "groupList": ["hadoop"],
+        "permList": ["Read","Execute", "Write", "Admin"]
+    }]
+}
+]
+}
